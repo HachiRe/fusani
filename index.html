@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+<link
+rel="Shortcut Icon"
+  type="img/png"
+  href="favicon.png"
+  >
+  <title>Fusani</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .add-v-button {
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      border-radius: 16px;
+    }
+    .add-v-button:hover {
+
+      background-color: black;
+      
+    }
+
+    .add-v-button:active {
+
+      background-color: grey;
+    }
+    
+    .add-c-button {
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      border-radius: 16px;
+    }
+     .add-c-button:hover {
+
+      background-color: black;
+
+        .add-c-button:active {
+
+      background-color: grey;
+    }
+      
+    }
+    .revoke-v-button {
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      border-radius: 16px;
+    }
+     .revoke-c-button:hover {
+
+      background-color: black;
+      
+    }
+
+     .revoke-v-button:active {
+
+      background-color: grey;
+    }
+    
+    .revoke-c-button {
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      border-radius: 16px;
+    }
+
+    .revoke-v-button:hover {
+
+      background-color: black;
+      
+    }
+    
+    .revoke-c-button:active {
+
+      background-color: grey;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Fusani</h1>
+  <form>
+    <input type="text" id="word" name="word">
+    <br>
+    <button 
+      class="add-v-button" type="button" onclick="addVowels()">Add Vowels
+    </button>
+
+    <button 
+      class="add-c-button" type="button" onclick="addConsonants()">Add Consonants
+    </button>
+    
+    <button 
+      class="revoke-v-button" type="button" onclick="removeVowels()">Remove Vowels
+    </button>
+    
+    
+    
+    <button 
+      class="revoke-c-button" type="button" onclick="removeConsonants()">Remove Consonants
+    </button>
+
+    
+  </form>
+
+  <script>
+    function addVowels() {
+      var wordInput = document.getElementById("word");
+      var vowels = "aeiou";
+      var newWord = "";
+      for (var i = 0; i < wordInput.value.length; i++) {
+        newWord += wordInput.value[i];
+        if (i < wordInput.value.length - 1 && !vowels.includes(wordInput.value[i + 1])) {
+          newWord += vowels.charAt(Math.floor(Math.random() * vowels.length));
+        }
+      }
+      wordInput.value = newWord;
+    }
+    function removeVowels() {
+      var wordInput = document.getElementById("word");
+      var vowels = "aeiouAEIOU";
+      var newWord = "";
+      for (var i = 0; i < wordInput.value.length; i++) {
+        if (!vowels.includes(wordInput.value[i])) {
+          newWord += wordInput.value[i];
+        }
+      }
+      wordInput.value = newWord;
+    }
+    function addConsonants() {
+      var wordInput = document.getElementById("word");
+      var consonants = "bcdfghjklmnpqrstvwxyz";
+      var newWord = "";
+      for (var i = 0; i < wordInput.value.length; i++) {
+        newWord += wordInput.value[i];
+        if (i < wordInput.value.length - 1 && !consonants.includes(wordInput.value[i + 1])) {
+          newWord += consonants.charAt(Math.floor(Math.random() * consonants.length));
+        }
+      }
+      wordInput.value = newWord;
+    }
+    function removeConsonants() {
+      var wordInput = document.getElementById("word");
+      var consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
+      var newWord = "";
+      for (var i = 0; i < wordInput.value.length; i++) {
+        if (!consonants.includes(wordInput.value[i])) {
+          newWord += wordInput.value[i];
+        }
+      }
+      wordInput.value = newWord;
+    }
+  </script>
+
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <h1>How does this work?</h1>
+  <h4>
+    The code provided is a set of instructions that a computer can follow to make changes to a word that someone types into a box on a website.
+    There are four buttons on the website that you can click. Each button does a different thing to the word that you type in.
+    The first button is called "Add Vowels." When you click this button, the computer looks at the word you typed and adds some vowels to it to make it longer. It does this by picking a random vowel and putting it in between two consonants. For example, if you typed in the word "dog," the computer might add an "e" to make it "doeg."
+    The second button is called "Remove Vowels." When you click this button, the computer looks at the word you typed and takes out all the vowels. So if you typed in the word "hello," the computer would change it to "hll."
+    The third button is called "Add Consonants." When you click this button, the computer looks at the word you typed and adds some consonants to it to make it longer. It does this by picking a random consonant and putting it in between two vowels. For example, if you typed in the word "cat," the computer might add an "h" to make it "chat."
+    The fourth button is called "Remove Consonants." When you click this button, the computer looks at the word you typed and takes out all the consonants. So if you typed in the word "world," the computer would change it to "o."
+  </h4>
+
+  <h1>Offline Fusani/Source code</h1>
+  <p>Here are the requirements:</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <ol>
+    <li>Copy the code from <a href="https://pastebin.com/raw/CuYGbTNa" target="_blank" >pastebin</a>.</li>
+    <li>Install <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>.</li>
+    <li>Open Visual Studio Code and click on "New File".</li>
+    <li>Create an HTML file with the extension ".html". For example, "index.html".</li>
+    <li>Paste the copied code into the HTML file.</li>
+    <li>Save the HTML file.</li>
+    <li>Open the HTML file in a web browser to see the preview.</li>
+  </ol>
+
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <a href="https://fusani.fandom.com/" target="_blank">Join our fandom! ❤️</a>
+  <a href="https://replit.com/@HachiKu/fusani?v=1" target="_blank">Donate Here! 💲 (btw you pay in cycles)</a>
+
+
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>Wanna create your own custom fusani? We will make contests (that includes the source code) and the winner will be decided by the curator.The custom fusani will be displayed in the website ❤️. Please submit our custom fusani variants in the fandom.</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+</body>
+
+</html>
